@@ -1,7 +1,8 @@
 import streamlit as st
 st.title("Приложение")
 
-if "books" not in st.session_state.books = []
+if "books" not in st.session_state:
+st.session_state.books = []
 
 st.header("➕ Добави книга")
 title = st.text_input("Заглавие")
