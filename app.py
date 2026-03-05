@@ -1,6 +1,6 @@
 import streamlit as st
 
-st.title("📚 Библиотека (Евро зона)")
+st.title("📚 Библиотека")
 
 # Инициализация на базата данни
 if "books" not in st.session_state:
