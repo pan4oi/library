@@ -6,7 +6,6 @@ st.title("📚 Библиотека")
 if "books" not in st.session_state:
     st.session_state.books = []
 
-# --- СЕКЦИЯ: ВЪВЕЖДАНЕ ---
 st.header("➕ Добави нова книга")
 col1, col2, col3 = st.columns([2, 2, 1])
 with col1:
@@ -29,7 +28,6 @@ if st.button("Добави в базата"):
 
 st.divider()
 
-# --- СЕКЦИЯ: ТЪРСЕНЕ ---
 st.header("🔍 Филтриране")
 
 c1, c2, c3 = st.columns(3)
@@ -51,7 +49,6 @@ if st.button("Приложи филтрите"):
         and b["price"] <= max_p
     ]
     
-    # Сортиране
     if sort_order == "Най-евтини първо":
         results = sorted(results, key=lambda x: x["price"])
     elif sort_order == "Най-скъпи първо":
@@ -64,6 +61,5 @@ if st.button("Приложи филтрите"):
     else:
         st.warning("Няма намерени книги по тези критерии.")
 
-# Показване на всичко
 if st.checkbox("Покажи инвентар (Таблица)"):
     st.dataframe(st.session_state.books, use_container_width=True)
