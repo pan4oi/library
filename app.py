@@ -2,7 +2,6 @@ import streamlit as st
 
 st.title("📚 Библиотека")
 
-# Инициализация на базата данни
 if "books" not in st.session_state:
     st.session_state.books = []
 
@@ -41,7 +40,6 @@ with c3:
 sort_order = st.radio("Сортирай по цена:", ["Без сортиране", "Най-евтини първо", "Най-скъпи първо"], horizontal=True)
 
 if st.button("Приложи филтрите"):
-    # Филтриране по трите критерия
     results = [
         b for b in st.session_state.books 
         if search_t.lower() in b["title"].lower() 
